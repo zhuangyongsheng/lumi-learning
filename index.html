@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f2">
+  <meta name="description" content="Lumi 演示学习乐园：用颜色冒险、主题课程和字母小游戏快乐学英语。无需登录，进度仅存于本机。">
+  <title>Lumi · 小小探索，大大进步</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M3 4c3-1 6-1 9 1 3-2 6-2 9-1v15c-3-1-6-1-9 2-3-3-6-3-9-2Z"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><path d="M7 7h10c3 0 4 3 5 10 .4 3-2 4-4 2l-3-3H9l-3 3c-2 2-4.4 1-4-2 1-7 2-10 5-10Z"/><path d="M7 10v5m-2.5-2.5h5M16 11h.01M19 14h.01"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.4 7 1-5 5 1.2 7-6.2-3.3-6.2 3.3 1.2-7-5-5 7-1Z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.7 7.3L22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2c1 6-5 6-3 10 1-1 2-2 2-4 4 2 7 5 7 8a7 7 0 0 1-14 0C5 9 11 9 13 2Z"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-5v16l-5-5H4Zm13-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 5v6h6m-6 0a9 9 0 1 1 2 7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="5" cy="8" rx="2.5" ry="3"/><ellipse cx="11" cy="5" rx="2.5" ry="3"/><ellipse cx="18" cy="7" rx="2.5" ry="3"/><path d="M6 15c-3 5 2 8 5 5 3 3 8 0 5-5-3-6-7-6-10 0Z"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 100 100"><path d="M51 29C28 15 9 33 13 57c4 26 21 36 37 28 18 9 34-3 38-27 4-25-16-43-37-29Z" fill="currentColor" stroke="none"/><path d="M51 29c0-11 2-17 6-21" fill="none" stroke="#5b3b37" stroke-width="6" stroke-linecap="round"/><path d="M53 21C56 5 75 8 79 9 74 22 63 26 53 21Z" fill="#a6c96d" stroke="none"/><path d="M26 43c-3 4-4 9-3 13" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-6 3h6M8 15a7 7 0 1 1 8 0l-1 3H9Z"/><path d="M12 1V0M2 6 0 5m22 1 2-1"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V3c5-4 9 4 15 0v12c-6 4-10-4-15 0"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3h10v7a5 5 0 0 1-10 0Zm0 2H3v4c0 3 3 4 5 4m9-8h4v4c0 3-3 4-5 4M12 15v6m-4 0h8"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">跳到学习内容</a>
+  <aside class="sidebar" aria-label="学习区块导航">
+    <a class="brand" href="#home" aria-label="Lumi 学习乐园首页"><span class="brand-mark"><svg class="icon"><use href="#i-spark"/></svg></span>lumi<span class="brand-dot">.</span></a>
+    <span class="brand-caption">小小探索，大大进步</span>
+    <div class="nav-caption">LET'S EXPLORE</div>
+    <nav class="main-nav">
+      <a href="#home" class="nav-link active" aria-current="page" aria-label="学习乐园"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>学习乐园</span><span class="nav-dot"></span></a>
+      <a href="#courses" class="nav-link" aria-label="主题课程"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span>主题课程</span></a>
+      <a href="#alphabet" class="nav-link" aria-label="字母小游戏"><svg class="icon" aria-hidden="true"><use href="#i-game"/></svg><span>字母小游戏</span></a>
+      <a href="#rewards" class="nav-link" aria-label="我的星星"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span>我的星星</span><span class="nav-count" data-stars>0</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="little-note"><span class="bulb-badge"><svg class="icon"><use href="#i-bulb"/></svg></span><strong>一点点，也很了不起。</strong><p>每天学一点，让好奇心<br>带你看见更大的世界。</p><span class="note-decoration" aria-hidden="true">a b c</span></div>
+      <button class="reset-link" id="reset-open"><svg class="icon"><use href="#i-reset"/></svg>重置本地进度</button>
+      <span class="sidebar-demo">LUMI · 演示学习空间</span>
+    </div>
+  </aside>
+  <div class="workspace" id="home">
+    <header class="topbar">
+      <form class="search-form" role="search" id="search-form">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <label class="sr-only" for="course-search">搜索主题课程，支持中文和英文</label>
+        <input id="course-search" type="search" placeholder="今天想探索什么？" autocomplete="off" maxlength="80">
+        <span class="search-hint" aria-hidden="true">搜索课程</span>
+      </form>
+      <div class="topbar-profile"><span class="streak"><svg class="icon"><use href="#i-flame"/></svg><span>连续学习 <strong id="streak-count">0</strong> 天</span></span><span class="profile-divider"></span><span class="avatar" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M15 23C7 1 19-5 23 19 24-4 37 0 30 24" fill="#fff9f0"/><ellipse cx="24" cy="31" rx="16" ry="13" fill="#fff9f0"/><circle cx="18" cy="29" r="1.8" fill="#443750"/><circle cx="30" cy="29" r="1.8" fill="#443750"/><path d="m22 34 2 2 2-2" fill="none" stroke="#443750" stroke-width="1.8" stroke-linecap="round"/><ellipse cx="13" cy="34" rx="3" ry="2" fill="#ffb6a4"/><ellipse cx="35" cy="34" rx="3" ry="2" fill="#ffb6a4"/></svg></span><div class="profile-name"><strong>小小探险家</strong><span>演示头像</span></div></div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="welcome" aria-labelledby="welcome-title"><div><div class="eyebrow">A LITTLE ENGLISH, A LOT OF WONDER</div><h1 id="welcome-title">Hello, little explorer! <svg class="welcome-spark icon" aria-hidden="true"><use href="#i-spark"/></svg></h1><p>准备好了吗？今天也一起发现英语的奇妙吧。</p></div><span class="today-tag"><span></span>今天也是探索的好日子</span></section>
+      <div class="content-columns">
+        <div class="learning-column">
+          <section class="adventure" aria-labelledby="adventure-title">
+            <div class="adventure-copy"><span class="adventure-label"><svg class="icon"><use href="#i-flag"/></svg>每日冒险 <span>DAILY ADVENTURE</span></span><h2 id="adventure-title">下一站，<br>彩虹的世界！</h2><p>和 Lumi 一起，收集藏在颜色里的小惊喜。</p><button class="button button-dark" data-start="colors">开始冒险<svg class="icon"><use href="#i-arrow"/></svg></button><span class="adventure-meta">3 道小挑战 <span>·</span> 约 2 分钟 <span>·</span> 最多 3 颗星星</span></div>
+            <div class="adventure-art"><img src="assets/adventure.png" alt="演示角色 Lumi：戴着护目镜的奶油色小兔，驾驶黄色小飞机在云间探索" width="1536" height="1024" fetchpriority="high"><span class="art-caption">LET YOUR CURIOSITY FLY</span></div>
+          </section>
+          <section class="courses-section" id="courses" aria-labelledby="courses-title">
+            <div class="section-heading"><div><h2 id="courses-title">小世界，大探索<span>Explore & learn</span></h2><p>从喜欢的主题开始，每一步都算数。</p></div><span class="course-total" id="course-count">4 个主题</span></div>
+            <div class="course-grid" id="course-grid">
+              <button class="course-card animals" data-start="animals" data-search="动物 动物朋友 animal animals friends rabbit cat dog 兔子 小猫 小狗"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual paw-art" aria-hidden="true"><svg class="icon"><use href="#i-paw"/></svg><span class="small-paw"><svg class="icon"><use href="#i-paw"/></svg></span></span><span class="course-name">Animal friends</span><span class="course-chinese">动物朋友</span><span class="course-progress"><span class="progress-track"><span data-progress="animals"></span></span><span data-percent="animals">0%</span></span></button>
+              <button class="course-card colors" data-start="colors" data-search="颜色 缤纷颜色 color colors colourful red blue yellow 红 蓝 黄"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual color-art" aria-hidden="true"><i></i><i></i><i></i></span><span class="course-name">Wonderful colors</span><span class="course-chinese">缤纷颜色</span><span class="course-progress"><span class="progress-track"><span data-progress="colors"></span></span><span data-percent="colors">0%</span></span></button>
+              <button class="course-card food" data-start="food" data-search="食物 水果 美味时刻 food fruit apple banana orange 苹果 香蕉 橙子"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual apple-art" aria-hidden="true"><svg><use href="#i-apple"/></svg></span><span class="course-name">Yummy yummy!</span><span class="course-chinese">美味时刻</span><span class="course-progress"><span class="progress-track"><span data-progress="food"></span></span><span data-percent="food">0%</span></span></button>
+              <button class="course-card numbers" data-start="numbers" data-search="数字 数字乐园 number numbers one two three 一 二 三"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual numbers-art" aria-hidden="true"><i>1</i><i>2</i><i>3</i></span><span class="course-name">Fun with numbers</span><span class="course-chinese">数字乐园</span><span class="course-progress"><span class="progress-track"><span data-progress="numbers"></span></span><span data-percent="numbers">0%</span></span></button>
+            </div>
+            <div class="empty-state" id="search-empty" hidden><svg class="icon"><use href="#i-search"/></svg><h3>还没发现这个主题</h3><p>试试“颜色”、animals 或“数字”。</p><button class="button button-light" id="clear-search">查看所有主题</button></div>
+            <span class="sr-only" id="search-status" role="status"></span>
+          </section>
+          <section class="alphabet-panel" id="alphabet" aria-labelledby="alphabet-title"><div class="alphabet-art" aria-hidden="true"><span>A</span><span>b</span><span>c</span></div><div class="alphabet-copy"><span class="eyebrow">A SMALL GAME, A BIG SMILE</span><h2 id="alphabet-title">字母，来捉迷藏！</h2><p>找一找，哪个小写字母是它的好朋友？</p></div><button class="button button-white" data-start="alphabet">玩一小局<svg class="icon"><use href="#i-arrow"/></svg></button></section>
+        </div>
+        <div class="discovery-column">
+          <section class="daily-word" aria-labelledby="word-title"><div class="word-heading"><h2 id="word-title">每日一个新朋友</h2><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><span class="word-eyebrow">WORD OF THE DAY</span><div class="word-illustration" aria-hidden="true"><span class="word-orbit"></span><svg class="apple"><use href="#i-apple"/></svg><svg class="mini-spark icon"><use href="#i-spark"/></svg><span class="word-dot"></span></div><h3 lang="en">apple</h3><div class="word-phonetic"><span lang="en">/ˈæp.əl/</span><span>苹果</span></div><button class="listen-button" id="listen-word"><svg class="icon"><use href="#i-sound"/></svg>听听怎么读</button><p class="word-example"><span lang="en">An apple a day!</span><span>每天一个苹果！</span></p><div class="pronunciation-hint" id="pronunciation-hint" role="status" hidden></div><button class="remember-button" id="remember-word">我记住啦<svg class="icon"><use href="#i-star"/></svg><span>+1</span></button></section>
+          <section class="rewards-panel" id="rewards" aria-labelledby="rewards-title"><div class="section-heading"><h2 id="rewards-title">努力会发光</h2><svg class="icon reward-heading-star" aria-hidden="true"><use href="#i-spark"/></svg></div><p class="reward-subtitle">每一次尝试，都离成长更近一点。</p><div class="star-total"><div class="big-star"><svg class="icon"><use href="#i-star"/></svg></div><div><strong data-stars>0</strong><span>我的小星星</span></div></div><div class="reward-progress-label"><span id="reward-goal-label">下一站：闪亮探索家</span><strong id="reward-goal">0 / 10</strong></div><div class="reward-track" role="progressbar" aria-label="闪亮探索家星星奖励" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="reward-progress"><span id="reward-fill"></span></div><div class="badges"><div class="badge" data-badge="1"><span><svg class="icon"><use href="#i-flag"/></svg></span><strong>第一步</strong><small>1 颗星</small></div><div class="badge" data-badge="5"><span><svg class="icon"><use href="#i-spark"/></svg></span><strong>小小发现家</strong><small>5 颗星</small></div><div class="badge" data-badge="10"><span><svg class="icon"><use href="#i-trophy"/></svg></span><strong>闪亮探索家</strong><small>10 颗星</small></div></div><p class="reward-note" id="reward-note">你的第一颗星星，正等着你！</p></section>
+          <div class="privacy-note"><svg class="icon"><use href="#i-shield"/></svg><p>安心探索，自在成长<span>不收集个人信息 · 进度仅存本机</span></p></div>
+        </div>
+      </div>
+      <footer><span class="footer-brand">lumi.</span><span>让好奇心，成为最好的老师。</span><span class="footer-demo">演示品牌与角色 · 本地学习体验</span></footer>
+    </main>
+  </div>
+  <dialog class="learning-dialog" id="learning-dialog" aria-labelledby="quiz-title"><button class="dialog-close" id="quiz-close" aria-label="关闭练习"><svg class="icon"><use href="#i-close"/></svg></button><div id="quiz-content"></div></dialog>
+  <dialog class="reset-dialog" id="reset-dialog" aria-labelledby="reset-title"><span class="reset-icon"><svg class="icon"><use href="#i-reset"/></svg></span><h2 id="reset-title">重新开始一段冒险？</h2><p>这会清除当前浏览器中的星星、课程进度和连续学习记录，无法撤销。不影响其他设备。</p><div class="reset-actions"><button class="button button-light" id="reset-cancel">保留我的进度</button><button class="button button-dark" id="reset-confirm">确认重置</button></div></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>
