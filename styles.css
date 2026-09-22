@@ -11,4 +11,198 @@ dialog{border:0;color:var(--ink);background:#fffcf5;border-radius:26px;padding:3
 @media(min-width:581px) and (max-width:1020px){.sidebar-bottom{display:flex;margin-top:auto;padding:0;width:100%;justify-content:center}.sidebar-bottom>*:not(.reset-link){display:none}.reset-link{font-size:0;padding:16px;gap:0}.reset-link .icon{width:21px;height:21px}}
 @media(max-width:580px){.welcome p{font-size:12px}.adventure-copy>p{font-size:11px}.adventure-meta{font-size:9px}.section-heading p,.course-chinese{font-size:11px}.level-tag{font-size:8px}.course-progress{font-size:10px}.alphabet-copy p{font-size:11px}.welcome .eyebrow{font-size:8px}.search-form input{font-size:12px}.course-name{font-size:19px}.nav-link>span:not(.nav-dot):not(.nav-count){font-size:11px}}
 @media(max-width:360px){.adventure-copy{width:72%}.adventure h2{font-size:27px}.adventure-art{left:46%;opacity:.8}.adventure-meta{font-size:8px}.course-grid{grid-template-columns:minmax(0,1fr)}.course-card{min-height:165px}.course-name{margin-top:22px;min-height:0;font-size:23px}.course-visual{right:30px}.level-tag{font-size:9px}}
+.life-section,.phonetics-section{scroll-margin-top:24px;margin-bottom:32px}
+.life-banner{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(210px,1fr);gap:32px;background:#e6eee1;border:1px solid #dce4d4;border-radius:23px;padding:32px 35px}
+.life-banner .eyebrow{color:#627453;font-size:9px}.life-banner h2{font-size:clamp(27px,3vw,41px);line-height:1.35;letter-spacing:-1px;color:#354b36;margin:12px 0}.life-banner p{font-size:13px;line-height:1.9;color:#576750;max-width:450px}.life-banner .button{margin-top:21px;background:#394d3e}
+.life-banner-note{align-self:center;border-radius:18px;background:#f8fbf3;padding:23px;box-shadow:0 4px 20px #334b3610}.life-note-icon{display:grid;place-items:center;background:#e7d8ae;color:#6c603c;border-radius:12px;width:39px;height:39px;margin-bottom:12px}.life-banner-note strong{font-size:14px}.life-banner-note p{font-size:12px;margin:8px 0 15px}.life-banner-note>span:last-of-type{font-size:12px;color:#3c5744}
+#life-progress{display:block;width:100%;height:8px;margin-top:8px;border:none;appearance:none;border-radius:10px;overflow:hidden;background:#dfe6d9}#life-progress::-webkit-progress-bar{background:#dfe6d9;border-radius:10px}#life-progress::-webkit-progress-value{background:#75946a;border-radius:10px}#life-progress::-moz-progress-bar{background:#75946a}
+.life-library{background:#fffdf8;padding:26px;border:1px solid var(--border);border-radius:21px;margin-top:17px}.life-library h3{font-size:19px;margin:0}.topic-list{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.topic-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid #e7e1d7;border-radius:10px;background:#faf8f1;padding:9px 12px;min-height:42px;font-size:12px;color:#685e6e}.topic-chip>span{font-size:10px;color:#82758c}.topic-chip:hover{border-color:#b6a5c9;background:#f2eef6}.topic-chip.active{background:#51416d;color:#fff;border-color:#51416d}.topic-chip.active>span{color:#ded2ed}
+.life-filters{display:flex;gap:12px;align-items:stretch}.word-search-label{display:flex;align-items:center;gap:10px;padding:10px 13px;background:#fff;border:1px solid #ded8e4;border-radius:11px;flex:1;min-width:0}.word-search-label .icon{width:18px;height:18px;color:#877490}.word-search-label input{border:0;background:transparent;min-width:0;width:100%;font-size:13px;color:var(--ink)}.learn-filter-label{display:flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap}.life-filters select,.speech-controls select{padding:9px 10px;border:1px solid #ded8e4;border-radius:9px;background:#fff;color:#574860;min-height:43px;font:inherit;max-width:100%}
+.word-results-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0;font-size:12px;color:#776783}.text-button{border:0;background:none;text-decoration:underline;text-underline-offset:4px;padding:7px 4px;color:#70558c;font-size:12px;min-height:36px}.life-word-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.life-word-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-width:0;border:1px solid #e8e2d8;background:#fbf8f0;border-radius:14px;padding:15px 16px;min-height:147px;transition:background .2s,transform .2s}.life-word-card:nth-child(4n+2){background:#f2eef8}.life-word-card:nth-child(4n+3){background:#eef5ed}.life-word-card:nth-child(4n+4){background:#fcf0e8}.life-word-card:hover{transform:translateY(-3px);border-color:#b39ec5}.word-card-top{font-size:10px;color:#7e6f84;display:flex;gap:6px;justify-content:space-between;width:100%}.word-card-top>span{white-space:nowrap}.life-word-card>strong{font-size:25px;line-height:1.35;margin:12px 0 2px;overflow-wrap:anywhere;letter-spacing:-.5px}.word-card-ipa{color:#786686;font-size:13px}.word-card-meaning{font-size:12px;color:#62596b;margin-top:7px}.life-word-card.practiced{border-color:#99b792}.life-word-card.practiced .word-card-top>span{color:#3e6c3a}
+.word-pagination{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:22px;font-size:12px;color:#715e7c}.button:disabled{opacity:.65;transform:none;box-shadow:none;cursor:default}.word-empty{text-align:center;padding:36px 15px;background:#f6f0f8;border-radius:14px;color:#6a517c}.word-empty p{font-size:13px;margin-top:8px}
+.speech-settings{border-top:1px solid #e9e3db;margin-top:24px;padding-top:15px;color:#75647e;font-size:12px}.speech-settings summary{cursor:pointer;width:fit-content;padding:5px 0}.speech-settings p{margin-top:10px;line-height:1.9}.speech-controls{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:12px 0}.speech-controls>label:first-child{display:flex;align-items:center;gap:12px;min-width:0;max-width:100%}.speech-controls select{font-size:12px;max-width:340px}.slow-label{display:flex;align-items:center;gap:6px;white-space:nowrap}.slow-label input{accent-color:#70558c;width:17px;height:17px}
+.phonetics-section{padding:26px;background:#f0eaf7;border:1px solid #e1d7ed;border-radius:21px}.phonetics-section .eyebrow{font-size:9px;color:#81708f}.phonetics-section h2{margin:5px 0;font-size:22px}.phonetics-section .section-heading p{font-size:12px}.phonetics-parent-note{font-size:12px;color:#796687;line-height:1.9;margin-top:13px;max-width:850px}.phoneme-filters{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.phoneme-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}.phoneme-card{display:flex;align-items:center;flex-direction:column;border:1px solid #dfd3e9;border-radius:13px;background:#fffcff;padding:14px 8px;gap:4px;min-width:0}.phoneme-card:hover{background:#fff7dd;border-color:#cfad74}.phoneme-card>strong{font-size:27px;font-family:"Segoe UI",sans-serif;line-height:1.4;font-weight:600;color:#705296}.phoneme-card>span{font-size:13px;color:#725e80;overflow-wrap:anywhere}.phoneme-card>small{font-size:10px;color:#81718c;text-align:center}.phoneme-card.practiced{border-color:#9dbb90;background:#f4f8ec}.phonetics-convention{font-size:11px;line-height:1.9;color:#7d6c87;margin-top:18px}
+.study-dialog{width:min(720px,calc(100% - 32px));padding:31px 34px}.study-dialog .quiz-eyebrow{padding-right:25px}.study-word-title{font-size:clamp(32px,6vw,48px);font-weight:800;letter-spacing:-1px;line-height:1.3;margin-top:12px;padding-right:15px;overflow-wrap:anywhere}.study-word-title:focus,.study-sound-title:focus{outline:none}.study-word-meta{display:flex;gap:15px;align-items:center;flex-wrap:wrap;color:#7c638d;margin:8px 0 20px;font-size:17px}.study-word-meta>strong{font-size:17px;font-weight:500;color:#5a4669}.audio-button{border:1px solid #d9cde6;background:#f2eaf9;border-radius:8px;color:#6f4c89;padding:7px 11px;font-size:12px;min-height:36px}.audio-button:hover{background:#e6d9f0}.parent-prompt{background:#f0f4e7;border-radius:12px;padding:12px 15px;color:#5e7050;font-size:12px;line-height:1.9;margin-bottom:18px}
+.study-language-block{padding:16px 0;border-bottom:1px solid #eee5e0}.study-block-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.study-block-title h3,.sound-contrast h3,.sound-exercise h3{font-size:14px;color:#6b557b;margin:0}.study-language-block>p[lang],.dialogue-line p[lang]{font-size:18px;line-height:1.6;color:#453653}.translation{color:#84728c;font-size:13px;line-height:1.7;margin-top:3px}.study-dialogue{padding:19px 0 0}.dialogue-line{display:flex;align-items:start;gap:12px;margin-top:10px;background:#f6f0f9;padding:13px;border-radius:12px}.dialogue-line:nth-child(3){background:#eef3e8}.speaker-label{padding:3px 7px;border-radius:6px;background:#e6daf0;color:#76568a;font-size:11px;white-space:nowrap;margin-top:3px}.dialogue-line>div{flex:1;min-width:0}.dialogue-line .audio-button{flex-shrink:0;font-size:11px;padding:6px 8px}
+.study-audio-footer{display:flex;align-items:center;gap:12px;justify-content:space-between;margin-top:12px;color:#816d8f;font-size:11px;line-height:1.8}.study-audio-footer .text-button{white-space:nowrap;flex-shrink:0}.practice-button{width:100%;margin-top:15px;font-size:14px}.practice-status{font-size:12px;line-height:1.8;color:#796587;margin-top:8px;min-height:22px}.study-navigation{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:17px;margin-top:15px;border-top:1px solid #e9e1df}
+.study-sound-title{font-size:59px;color:#765493;line-height:1.3;margin-top:9px;text-align:center;font-weight:500;font-family:"Segoe UI",sans-serif}.sound-name{text-align:center;color:#8b739b;font-size:13px;margin:3px 0 18px}.sound-examples{display:grid;grid-template-columns:1fr 1fr;gap:13px}.sound-example{display:flex;flex-direction:column;align-items:center;gap:5px;border:1px solid #e4d9eb;border-radius:14px;background:#fffaf0;padding:16px;color:#725780}.sound-example strong{font-size:25px;line-height:1.3}.sound-example span{font-size:13px}.sound-example small{font-size:11px;margin-top:4px;text-decoration:underline;text-underline-offset:3px}.sound-contrast{background:#f3eee5;border-radius:13px;padding:15px;margin-top:14px}.sound-contrast p{font-size:13px;color:#786c72;margin:8px 0}.sound-contrast>span{font-size:12px;margin-left:10px;color:#796888}.sound-exercise{margin-top:20px;padding-top:18px;border-top:1px solid #e9e0e4}.sound-exercise>p:not(.focus-word){font-size:12px;color:#796387;margin-top:8px}.focus-word{font-size:31px;letter-spacing:1px;text-align:center;margin:13px 0;color:#6b4a80}.focus-word mark{background:#ffdc91;color:#66422b;border-radius:5px;padding:0 3px;text-decoration:underline;text-underline-offset:4px}.sound-options{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.sound-option{background:#fff;border:2px solid #e6dbea;border-radius:12px;font-size:23px;color:#765186;min-height:52px;font-family:"Segoe UI",sans-serif}.sound-option.correct{background:#edf5e7;border-color:#8dab7c;color:#45643c}.sound-option.wrong{background:#fff0e5;border-color:#da9c78;color:#936044}
+.parent-prompt summary{cursor:pointer;font-weight:600}.parent-prompt>p{margin-top:8px}
+select:focus-visible,summary:focus-visible{outline:3px solid #7354af;outline-offset:4px}
+@media(max-width:1220px){.life-word-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.life-banner{padding:27px;gap:24px}.phoneme-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:850px){.life-banner{grid-template-columns:1fr;gap:20px}.life-banner-note{display:grid;grid-template-columns:40px 1fr;gap:5px 12px;padding:18px}.life-banner-note .life-note-icon{grid-row:1/3;margin-bottom:0}.life-banner-note p{margin:0}.life-banner-note>span:last-of-type,.life-banner-note progress{grid-column:2}.life-filters{flex-wrap:wrap}.word-search-label{flex-basis:100%}.learn-filter-label{margin-left:auto}.life-library,.phonetics-section{padding:22px}.phoneme-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.life-word-card{padding:13px}.word-card-top{font-size:9px}.life-word-card>strong{font-size:23px}}
+@media(max-width:580px){.main-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.sidebar-bottom{position:static;width:100%;margin-top:10px;display:flex;justify-content:flex-end}.reset-link{font-size:11px;width:auto;gap:7px;min-height:36px;padding:7px 10px}.topbar{min-height:108px}.search-form{width:100%}.life-section,.phonetics-section{margin-bottom:24px}.life-banner{padding:23px 20px;border-radius:18px}.life-banner h2{font-size:31px}.life-banner p{font-size:12px}.life-banner-note{padding:15px;grid-template-columns:1fr}.life-banner-note .life-note-icon{display:none}.life-banner-note>span:last-of-type,.life-banner-note progress{grid-column:1}.life-banner-note strong{font-size:13px}.life-library,.phonetics-section{padding:18px 14px;border-radius:17px}.life-library h3{font-size:17px}.topic-list{gap:7px;margin:16px 0}.topic-chip{font-size:11px;padding:8px 10px;min-height:39px}.topic-chip>span{font-size:9px}.life-word-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.life-word-card{min-height:141px;padding:12px}.life-word-card>strong{font-size:23px}.word-card-ipa{font-size:12px}.word-card-top{font-size:9px}.word-card-top>span{font-size:8px}.word-search-label input{font-size:12px}.word-results-heading{font-size:11px}.speech-controls{gap:10px}.speech-controls>label:first-child{display:block;width:100%}.speech-controls select{width:100%;max-width:100%;margin-top:6px}.phonetics-section .section-heading{align-items:start;flex-direction:column;gap:7px}.phonetics-section h2{font-size:20px}.phoneme-filters{gap:7px}.phoneme-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.phoneme-card{padding:11px 7px}.phoneme-card>strong{font-size:26px}.study-dialog{padding:28px 20px;width:calc(100% - 24px);max-height:calc(100dvh - 24px)}.study-word-meta{gap:10px;font-size:15px}.study-language-block>p[lang],.dialogue-line p[lang]{font-size:17px}.dialogue-line{flex-wrap:wrap;gap:8px;padding:12px}.dialogue-line>div{min-width:calc(100% - 56px)}.dialogue-line .audio-button{margin-left:42px}.study-dialog .translation{font-size:12px}.parent-prompt{font-size:12px}.study-sound-title{font-size:51px}.sound-contrast>span{display:block;margin:6px 0 0}.life-library .section-heading{align-items:start}.study-navigation .button{font-size:12px}.phonetics-convention{font-size:11px}}
+@media(max-width:360px){.life-word-grid{grid-template-columns:1fr}.life-word-card{min-height:130px}.topic-chip{padding:8px}.life-banner h2{font-size:27px}.word-pagination{gap:10px}.study-dialog{padding:28px 16px}.sound-examples{gap:8px}}
+
+/* Modules follow DOM order; only the dedicated handles initiate sorting. */
+#learning-modules{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+#learning-modules>.learning-module{position:relative;min-width:0;margin:0;scroll-margin-top:24px;isolation:isolate}
+.module-order-help{display:flex;align-items:center;gap:7px;margin:-9px 0 18px;color:#796985;font-size:11px;line-height:1.7}
+.module-order-help .icon{width:17px;height:20px;color:#927da5}
+.module-toolbar{position:absolute;top:14px;right:14px;display:flex;align-items:center;z-index:3}
+.module-handle{display:inline-flex;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;min-width:40px;min-height:40px;padding:9px;border:1px solid #ded3e7;border-radius:10px;background:#fffdf8;color:#806b91;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transition:background .18s,color .18s,box-shadow .18s}
+.module-handle .icon{width:20px;height:20px;pointer-events:none}
+.module-handle:hover{background:#eee7f7;color:#553b71;box-shadow:0 2px 8px #55406f12}
+.module-handle:active{cursor:grabbing}
+.module-handle:focus-visible{outline:3px solid #7354af;outline-offset:2px;background:#eee7f7;color:#553b71}
+.learning-module:focus-visible{outline:3px solid #7354af;outline-offset:5px}
+.module-nav-item{position:relative;display:flex;align-items:center;gap:2px;min-width:0;padding:2px;border:1px solid transparent;border-radius:13px}
+.module-nav-item:hover{background:#f8f4ed}
+.module-nav-item:focus-within{border-color:#c0aad5}
+.module-nav-item .nav-link{flex:1;min-width:0;min-height:44px;padding:10px 8px;gap:8px;border-radius:10px;font-size:12px;line-height:1.5}
+.module-nav-item .nav-link .icon{width:20px;height:20px}
+.module-nav-item .nav-link:focus-visible{outline-offset:2px}
+.module-nav-item .nav-link>span{min-width:0}
+.module-nav-item .nav-count{min-width:20px;flex-shrink:0}
+.module-nav-item>.module-handle{background:#f4eef8;border-color:#e8dfed;color:#8a729d}
+.module-nav-item>.module-handle:hover,.module-nav-item>.module-handle:focus-visible{background:#e9dff2;color:#573d73}
+.main-nav{gap:7px}
+.nav-caption{margin-top:35px}
+.sidebar-bottom{padding-top:44px}
+
+.courses-section>.module-toolbar{top:0;right:0}
+.courses-section>.section-heading,.phonetics-section>.section-heading,.rewards-panel>.section-heading{padding-right:52px;min-height:40px}
+.alphabet-panel{padding:20px 76px 20px 23px;gap:20px;flex-wrap:nowrap}
+.alphabet-panel .alphabet-art{width:70px;font-size:43px}
+.alphabet-panel .alphabet-copy{min-width:0}
+.alphabet-panel .button{margin-left:0;flex-shrink:0}
+#alphabet-progress{display:block;margin-top:5px;font-size:11px;color:#735b8e;font-weight:600}
+.life-section .life-banner{padding-top:60px}
+.phonetics-section>.module-toolbar,.rewards-panel>.module-toolbar{top:18px;right:18px}
+.adventure>.module-toolbar .module-handle{background:#fff7e4e8;color:#7c592e;border-color:#e4b963}
+.adventure-meta{white-space:normal;line-height:1.8;max-width:100%}
+.rewards-panel{min-height:0}
+.privacy-note{margin-top:24px}
+
+/* A compact daily word banner leaves room for the other learning modules. */
+.daily-word{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:26px;padding:20px 24px;text-align:left}
+.daily-word-content,.daily-word-practice,.word-definition{min-width:0}
+.daily-word .word-heading{gap:12px}
+.daily-word .word-heading h2{font-size:17px}
+.daily-word-meta{display:flex;align-items:center;flex-wrap:wrap;gap:3px 10px;margin-top:4px;font-size:10px;color:#d9cbe7}
+.daily-word .word-eyebrow{margin:0;font-size:9px;letter-spacing:1.3px;color:#d9cbe7}
+#daily-word-topic{color:#ffdda4}
+#daily-word-date{font-variant-numeric:tabular-nums}
+.daily-word-entry{display:flex;align-items:center;gap:14px;margin:14px 0 10px}
+.daily-word .word-illustration{flex:0 0 64px;width:64px;min-width:64px;height:72px;margin:0}
+.daily-word .word-orbit{width:54px;height:54px}
+.daily-word .word-orbit:after{inset:-7px}
+.word-illustration .word-book{position:relative;width:42px;height:42px;stroke-width:1.5;color:#ffd48d;transform:rotate(-9deg)}
+.daily-word .word-illustration .mini-spark{right:0;top:2px;width:12px;height:12px}
+.daily-word h3{font-size:clamp(24px,2.3vw,34px);line-height:1.2;min-height:1.2em;letter-spacing:-.5px;margin:0;overflow-wrap:anywhere}
+.daily-word .word-phonetic{justify-content:flex-start;flex-wrap:wrap;gap:4px 10px;min-height:20px;margin-top:6px;font-size:13px}
+.daily-word .word-phonetic span+span{border:0;padding:0;font-size:12px;color:#ffefd6}
+.daily-word-note{font-size:11px;line-height:1.7;color:#d9cbe7}
+.daily-word-practice{padding-left:26px;border-left:1px solid #bba2d54a;align-self:stretch}
+.word-practice-label{display:block;min-height:32px;padding-right:40px;font-size:11px;color:#e4d6ef}
+.daily-word .word-example{margin-top:8px;min-height:48px;gap:4px;overflow-wrap:anywhere}
+.daily-word .word-example span:first-child{font-size:15px;line-height:1.6;letter-spacing:0}
+.daily-word .word-example span+span{font-size:12px;color:#e0d0ed}
+.daily-word-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:16px}
+.daily-word-actions .listen-button,.daily-word-actions .remember-button{display:inline-flex;width:auto;max-width:100%;min-height:40px;margin:0;padding:8px 12px;border:1px solid #9880b3;border-radius:10px;font-size:12px}
+.daily-word-actions .remember-button{background:#ffffff0a;color:#fff3ff}
+.daily-word-actions .remember-button:hover:not(:disabled){background:#ffffff18}
+.daily-word-actions .remember-button .icon{margin-left:0}
+.daily-word .pronunciation-hint{font-size:12px;margin-top:12px}
+.daily-word>.module-toolbar .module-handle{background:#685280;border-color:#9f85b9;color:#f0dfff}
+.daily-word>.module-toolbar .module-handle:hover{background:#80649c}
+.daily-word .module-handle:focus-visible,.daily-word:focus-visible{outline-color:#ffd386}
+
+/* The JS sorter applies these states to module sections and nav items. */
+.learning-module.module-dragging,.module-nav-item.module-dragging{opacity:.45;outline:2px dashed #9d7eba;outline-offset:3px}
+.module-handle.module-dragging{opacity:.55;cursor:grabbing}
+.learning-module.module-drop-before::before,.learning-module.module-drop-after::after,.module-nav-item.module-drop-before::before,.module-nav-item.module-drop-after::after{content:"";position:absolute;left:0;right:0;height:3px;border-radius:3px;background:#8863b0;box-shadow:0 0 0 2px #faf8f2;pointer-events:none;z-index:5}
+.learning-module.module-drop-before::before{top:-12px}
+.learning-module.module-drop-after::after{bottom:-12px}
+.module-nav-item.module-drop-before::before{top:-5px}
+.module-nav-item.module-drop-after::after{bottom:-5px}
+body.module-sorting,body.module-sorting .module-handle{cursor:grabbing;user-select:none;-webkit-user-select:none}
+body.module-sorting .course-card:hover,body.module-sorting .button:hover{transform:none;box-shadow:none}
+
+/* Longer topic words and the 26-letter activity share the same dialog. */
+.quiz-progress{flex-wrap:wrap;gap:5px;margin:18px 0}
+.quiz-progress span{flex:1 0 20px;min-width:14px;max-width:32px;height:6px}
+.quiz-option{min-width:0;white-space:normal;overflow-wrap:anywhere;word-break:normal;hyphens:auto;text-align:center;line-height:1.45}
+.quiz-option>*{max-width:100%}
+.quiz-stimulus.word-stimulus{height:auto;min-height:92px;font-size:clamp(26px,5vw,40px);overflow-wrap:anywhere;text-align:center}
+.quiz-word-detail{margin-top:16px;padding:16px;border:1px solid #e4d8ed;border-radius:14px;background:#f5effa;color:#675376;line-height:1.8;overflow-wrap:anywhere}
+.quiz-word-heading{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin-bottom:8px}
+.quiz-word-heading>*{min-width:0;max-width:100%}
+.quiz-word-heading strong,.quiz-word-heading h3{font-size:22px;line-height:1.3;color:#503765}
+.quiz-word-heading span{font-size:14px;color:#816a95}
+.quiz-word-detail .audio-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px}
+.quiz-word-detail .icon{width:17px;height:17px}
+.quiz-example-en{font-size:16px;line-height:1.7;color:#463452;margin-top:10px}
+.quiz-example-zh{font-size:12px;line-height:1.8;color:#7f6c89;margin-top:3px}
+#quiz-audio-status{margin-top:10px;font-size:12px;line-height:1.8;color:#725982;overflow-wrap:anywhere}
+#quiz-audio-status:empty{margin:0}
+
+@media(min-width:1021px){
+  .course-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
+  .course-card{min-width:0;min-height:184px;padding:14px 15px}
+  .course-name{display:flex;align-items:flex-end;min-height:46px;max-width:100%;margin-top:22px;font-size:20px;line-height:1.15;overflow-wrap:anywhere}
+  .course-visual{right:17px;top:44px;opacity:.45}
+  .course-progress{margin-top:12px}
+  .level-tag{font-size:9px}
+}
+@media(min-width:1021px) and (max-width:1220px){
+  .module-nav-item .nav-link{font-size:11px;padding:10px 4px;gap:6px}
+  .module-nav-item .nav-link .icon{width:18px;height:18px}
+  .course-name{font-size:18px}
+}
+@media(min-width:581px) and (max-width:1020px){
+  .sidebar{width:106px;padding-inline:12px}
+  .workspace{margin-left:106px}
+  .main-nav{margin-top:28px;gap:8px}
+  .module-nav-item{padding:0;border:0;gap:2px}
+  .module-nav-item .nav-link{flex:0 0 40px;width:40px;min-height:44px;padding:10px;justify-content:center}
+  .sidebar-bottom{padding-top:18px}
+  .toast{left:calc(50% + 53px)}
+}
+@media(max-width:700px){
+  .daily-word{grid-template-columns:minmax(0,1fr);gap:16px;padding:20px}
+  .daily-word .word-heading{padding-right:44px}
+  .daily-word-practice{padding:15px 0 0;border-left:0;border-top:1px solid #bba2d54a}
+  .word-practice-label{min-height:0;padding-right:0}
+  .daily-word .word-example{min-height:32px}
+  .daily-word-actions{margin-top:12px}
+  .alphabet-panel{flex-wrap:wrap;gap:14px}
+  .alphabet-panel .alphabet-copy{flex:1 1 180px}
+}
+@media(max-width:580px){
+  .sidebar{padding:20px 16px 12px}
+  .main-nav{display:flex;flex-direction:row;gap:10px;margin-top:14px;padding:6px 4px 10px;width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scroll-padding-inline:6px;scrollbar-width:thin;scrollbar-color:#bba6ca #f5eff8}
+  .main-nav::-webkit-scrollbar{height:6px}
+  .main-nav::-webkit-scrollbar-track{background:#f5eff8;border-radius:6px}
+  .main-nav::-webkit-scrollbar-thumb{background:#bba6ca;border-radius:6px}
+  .module-nav-item{flex:0 0 auto;max-width:calc(100vw - 48px);min-height:52px;padding:3px;border-color:#e9e1ef;background:#fffdf8}
+  .module-nav-item .nav-link{flex:1 1 auto;flex-direction:row;width:auto;min-height:40px;padding:8px;gap:6px}
+  .module-nav-item .nav-link>span:not(.nav-dot):not(.nav-count){display:block;font-size:11px;white-space:nowrap}
+  .module-nav-item .nav-link .icon{width:18px;height:18px}
+  .module-nav-item .nav-count{display:grid;font-size:10px}
+  .sidebar-bottom{position:static;margin-top:8px;padding:0}
+  .reset-link{min-height:40px}
+  .module-order-help{align-items:flex-start;margin:-8px 0 16px;font-size:11px}
+  #learning-modules{gap:18px}
+  .learning-module>.module-toolbar{top:12px;right:12px}
+  .courses-section>.module-toolbar{top:0;right:0}
+  .courses-section>.section-heading{align-items:flex-start;flex-direction:column;gap:6px;padding-right:48px}
+  .alphabet-panel{display:grid;grid-template-columns:54px minmax(0,1fr);padding:20px 62px 20px 18px;gap:12px}
+  .alphabet-panel .alphabet-art{width:54px;font-size:36px;letter-spacing:-7px}
+  .alphabet-panel .alphabet-copy{min-width:0}
+  .alphabet-copy .eyebrow{display:block;font-size:7px;line-height:1.6}
+  .alphabet-panel .button{grid-column:1/-1;justify-self:start;margin:0;min-height:40px}
+  .daily-word{padding:20px 18px}
+  .daily-word .word-illustration{flex-basis:54px;min-width:54px;width:54px;height:62px}
+  .daily-word .word-orbit{width:44px;height:44px}
+  .word-illustration .word-book{width:36px;height:36px}
+  .daily-word .word-heading h2{font-size:16px}
+  .daily-word-entry{gap:12px}
+  .quiz-word-detail{padding:13px}
+  .quiz-word-heading strong,.quiz-word-heading h3{font-size:20px}
+  .quiz-example-en{font-size:15px}
+  .module-nav-item.module-drop-before::before,.module-nav-item.module-drop-after::after{top:0;bottom:0;width:3px;height:auto}
+  .module-nav-item.module-drop-before::before{left:-6px;right:auto}
+  .module-nav-item.module-drop-after::after{left:auto;right:-6px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}

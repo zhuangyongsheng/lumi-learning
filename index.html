@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf8f2">
-  <meta name="description" content="Lumi 演示学习乐园：用颜色冒险、主题课程和字母小游戏快乐学英语。无需登录，进度仅存于本机。">
-  <title>Lumi · 小小探索，大大进步</title>
+  <meta name="description" content="Lumi 亲子英语：300 个生活常用词、双语情景对话与英式音标课堂。无需登录，学习进度仅存于本机。">
+  <title>Lumi · 和你一起，把英语说进生活</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script src="words-home.js" defer></script>
+  <script src="words-world.js" defer></script>
+  <script src="words-play.js" defer></script>
+  <script src="phonetics-data.js" defer></script>
+  <script src="course-data.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -30,21 +35,46 @@
     <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-6 3h6M8 15a7 7 0 1 1 8 0l-1 3H9Z"/><path d="M12 1V0M2 6 0 5m22 1 2-1"/></symbol>
     <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V3c5-4 9 4 15 0v12c-6 4-10-4-15 0"/></symbol>
     <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3h10v7a5 5 0 0 1-10 0Zm0 2H3v4c0 3 3 4 5 4m9-8h4v4c0 3-3 4-5 4M12 15v6m-4 0h8"/></symbol>
+    <symbol id="i-grip" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><circle cx="8" cy="5" r="1.8"/><circle cx="16" cy="5" r="1.8"/><circle cx="8" cy="12" r="1.8"/><circle cx="16" cy="12" r="1.8"/><circle cx="8" cy="19" r="1.8"/><circle cx="16" cy="19" r="1.8"/></g></symbol>
   </svg>
   <a class="skip-link" href="#main">跳到学习内容</a>
   <aside class="sidebar" aria-label="学习区块导航">
     <a class="brand" href="#home" aria-label="Lumi 学习乐园首页"><span class="brand-mark"><svg class="icon"><use href="#i-spark"/></svg></span>lumi<span class="brand-dot">.</span></a>
     <span class="brand-caption">小小探索，大大进步</span>
     <div class="nav-caption">LET'S EXPLORE</div>
-    <nav class="main-nav">
-      <a href="#home" class="nav-link active" aria-current="page" aria-label="学习乐园"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>学习乐园</span><span class="nav-dot"></span></a>
-      <a href="#courses" class="nav-link" aria-label="主题课程"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span>主题课程</span></a>
-      <a href="#alphabet" class="nav-link" aria-label="字母小游戏"><svg class="icon" aria-hidden="true"><use href="#i-game"/></svg><span>字母小游戏</span></a>
-      <a href="#rewards" class="nav-link" aria-label="我的星星"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span>我的星星</span><span class="nav-count" data-stars>0</span></a>
+    <nav class="main-nav" aria-label="可排序学习模块" aria-describedby="module-order-help">
+      <div class="module-nav-item" data-module="courses">
+        <a href="#courses" class="nav-link active" aria-current="page" aria-label="主题课程"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span>主题课程</span></a>
+        <button type="button" class="module-handle" data-module-handle="courses" draggable="true" aria-label="调整小世界大探索顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
+      <div class="module-nav-item" data-module="alphabet">
+        <a href="#alphabet" class="nav-link" aria-label="字母小游戏"><svg class="icon" aria-hidden="true"><use href="#i-game"/></svg><span>字母小游戏</span></a>
+        <button type="button" class="module-handle" data-module-handle="alphabet" draggable="true" aria-label="调整字母来捉迷藏顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
+      <div class="module-nav-item" data-module="daily-word">
+        <a href="#daily-word" class="nav-link" aria-label="每日一个新朋友"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>每日一个新朋友</span></a>
+        <button type="button" class="module-handle" data-module-handle="daily-word" draggable="true" aria-label="调整每日一个新朋友顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
+      <div class="module-nav-item" data-module="life">
+        <a href="#life" class="nav-link" aria-label="生活300词"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span>生活300词</span></a>
+        <button type="button" class="module-handle" data-module-handle="life" draggable="true" aria-label="调整生活300词顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
+      <div class="module-nav-item" data-module="phonetics">
+        <a href="#phonetics" class="nav-link" aria-label="音标课堂"><svg class="icon" aria-hidden="true"><use href="#i-sound"/></svg><span>音标课堂</span></a>
+        <button type="button" class="module-handle" data-module-handle="phonetics" draggable="true" aria-label="调整音标课堂顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
+      <div class="module-nav-item" data-module="adventure">
+        <a href="#adventure" class="nav-link" aria-label="每日冒险"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg><span>每日冒险</span></a>
+        <button type="button" class="module-handle" data-module-handle="adventure" draggable="true" aria-label="调整每日冒险顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
+      <div class="module-nav-item" data-module="rewards">
+        <a href="#rewards" class="nav-link" aria-label="我的星星"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span>我的星星</span><span class="nav-count" data-stars>0</span></a>
+        <button type="button" class="module-handle" data-module-handle="rewards" draggable="true" aria-label="调整我的星星顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button>
+      </div>
     </nav>
     <div class="sidebar-bottom">
       <div class="little-note"><span class="bulb-badge"><svg class="icon"><use href="#i-bulb"/></svg></span><strong>一点点，也很了不起。</strong><p>每天学一点，让好奇心<br>带你看见更大的世界。</p><span class="note-decoration" aria-hidden="true">a b c</span></div>
-      <button class="reset-link" id="reset-open"><svg class="icon"><use href="#i-reset"/></svg>重置本地进度</button>
+      <button class="reset-link" id="reset-open"><svg class="icon"><use href="#i-reset"/></svg>重置本地进度与排序</button>
       <span class="sidebar-demo">LUMI · 演示学习空间</span>
     </div>
   </aside>
@@ -60,36 +90,88 @@
     </header>
     <main id="main" tabindex="-1">
       <section class="welcome" aria-labelledby="welcome-title"><div><div class="eyebrow">A LITTLE ENGLISH, A LOT OF WONDER</div><h1 id="welcome-title">Hello, little explorer! <svg class="welcome-spark icon" aria-hidden="true"><use href="#i-spark"/></svg></h1><p>准备好了吗？今天也一起发现英语的奇妙吧。</p></div><span class="today-tag"><span></span>今天也是探索的好日子</span></section>
-      <div class="content-columns">
-        <div class="learning-column">
-          <section class="adventure" aria-labelledby="adventure-title">
-            <div class="adventure-copy"><span class="adventure-label"><svg class="icon"><use href="#i-flag"/></svg>每日冒险 <span>DAILY ADVENTURE</span></span><h2 id="adventure-title">下一站，<br>彩虹的世界！</h2><p>和 Lumi 一起，收集藏在颜色里的小惊喜。</p><button class="button button-dark" data-start="colors">开始冒险<svg class="icon"><use href="#i-arrow"/></svg></button><span class="adventure-meta">3 道小挑战 <span>·</span> 约 2 分钟 <span>·</span> 最多 3 颗星星</span></div>
-            <div class="adventure-art"><img src="assets/adventure.png" alt="演示角色 Lumi：戴着护目镜的奶油色小兔，驾驶黄色小飞机在云间探索" width="1536" height="1024" fetchpriority="high"><span class="art-caption">LET YOUR CURIOSITY FLY</span></div>
-          </section>
-          <section class="courses-section" id="courses" aria-labelledby="courses-title">
-            <div class="section-heading"><div><h2 id="courses-title">小世界，大探索<span>Explore & learn</span></h2><p>从喜欢的主题开始，每一步都算数。</p></div><span class="course-total" id="course-count">4 个主题</span></div>
-            <div class="course-grid" id="course-grid">
-              <button class="course-card animals" data-start="animals" data-search="动物 动物朋友 animal animals friends rabbit cat dog 兔子 小猫 小狗"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual paw-art" aria-hidden="true"><svg class="icon"><use href="#i-paw"/></svg><span class="small-paw"><svg class="icon"><use href="#i-paw"/></svg></span></span><span class="course-name">Animal friends</span><span class="course-chinese">动物朋友</span><span class="course-progress"><span class="progress-track"><span data-progress="animals"></span></span><span data-percent="animals">0%</span></span></button>
-              <button class="course-card colors" data-start="colors" data-search="颜色 缤纷颜色 color colors colourful red blue yellow 红 蓝 黄"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual color-art" aria-hidden="true"><i></i><i></i><i></i></span><span class="course-name">Wonderful colors</span><span class="course-chinese">缤纷颜色</span><span class="course-progress"><span class="progress-track"><span data-progress="colors"></span></span><span data-percent="colors">0%</span></span></button>
-              <button class="course-card food" data-start="food" data-search="食物 水果 美味时刻 food fruit apple banana orange 苹果 香蕉 橙子"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual apple-art" aria-hidden="true"><svg><use href="#i-apple"/></svg></span><span class="course-name">Yummy yummy!</span><span class="course-chinese">美味时刻</span><span class="course-progress"><span class="progress-track"><span data-progress="food"></span></span><span data-percent="food">0%</span></span></button>
-              <button class="course-card numbers" data-start="numbers" data-search="数字 数字乐园 number numbers one two three 一 二 三"><span class="course-top"><span class="level-tag">启蒙 · 3 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual numbers-art" aria-hidden="true"><i>1</i><i>2</i><i>3</i></span><span class="course-name">Fun with numbers</span><span class="course-chinese">数字乐园</span><span class="course-progress"><span class="progress-track"><span data-progress="numbers"></span></span><span data-percent="numbers">0%</span></span></button>
+      <p class="module-order-help" id="module-order-help"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg><span>拖动把手调整顺序，键盘上下键亦可，顺序存本机。</span></p>
+      <div id="module-order-status" class="sr-only" role="status" aria-atomic="true"></div>
+      <div id="learning-modules">
+        <section class="courses-section learning-module" id="courses" data-module="courses" aria-labelledby="courses-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="courses" draggable="true" aria-label="调整小世界大探索顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="section-heading"><div><h2 id="courses-title">小世界，大探索<span>Explore & learn</span></h2><p>从喜欢的主题开始，每一步都算数。</p></div><span class="course-total" id="course-count">4 个主题</span></div>
+          <div class="course-grid" id="course-grid">
+            <button class="course-card animals" data-start="animals" data-search="动物 动物朋友 animal animals friends rabbit cat dog 兔子 小猫 小狗"><span class="course-top"><span class="level-tag">启蒙 · 20 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual paw-art" aria-hidden="true"><svg class="icon"><use href="#i-paw"/></svg><span class="small-paw"><svg class="icon"><use href="#i-paw"/></svg></span></span><span class="course-name">Animal friends</span><span class="course-chinese">动物朋友</span><span class="course-progress"><span class="progress-track"><span data-progress="animals"></span></span><span data-percent="animals">0%</span></span></button>
+            <button class="course-card colors" data-start="colors" data-search="颜色 缤纷颜色 color colors colourful red blue yellow 红 蓝 黄"><span class="course-top"><span class="level-tag">启蒙 · 10 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual color-art" aria-hidden="true"><i></i><i></i><i></i></span><span class="course-name">Wonderful colors</span><span class="course-chinese">缤纷颜色</span><span class="course-progress"><span class="progress-track"><span data-progress="colors"></span></span><span data-percent="colors">0%</span></span></button>
+            <button class="course-card food" data-start="food" data-search="食物 水果 美味时刻 food fruit apple banana orange 苹果 香蕉 橙子"><span class="course-top"><span class="level-tag">启蒙 · 20 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual apple-art" aria-hidden="true"><svg><use href="#i-apple"/></svg></span><span class="course-name">Yummy yummy!</span><span class="course-chinese">美味时刻 · 水果</span><span class="course-progress"><span class="progress-track"><span data-progress="food"></span></span><span data-percent="food">0%</span></span></button>
+            <button class="course-card numbers" data-start="numbers" data-search="数字 数字乐园 number numbers one two three 一 二 三"><span class="course-top"><span class="level-tag">启蒙 · 20 个单词</span><span class="course-go"><svg class="icon"><use href="#i-arrow"/></svg></span></span><span class="course-visual numbers-art" aria-hidden="true"><i>1</i><i>2</i><i>3</i></span><span class="course-name">Fun with numbers</span><span class="course-chinese">数字乐园</span><span class="course-progress"><span class="progress-track"><span data-progress="numbers"></span></span><span data-percent="numbers">0%</span></span></button>
+          </div>
+          <div class="empty-state" id="search-empty" hidden><svg class="icon"><use href="#i-search"/></svg><h3>还没发现这个主题</h3><p>试试“颜色”、animals 或“数字”。</p><button class="button button-light" id="clear-search">查看所有主题</button></div>
+          <span class="sr-only" id="search-status" role="status"></span>
+        </section>
+        <section class="alphabet-panel learning-module" id="alphabet" data-module="alphabet" aria-labelledby="alphabet-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="alphabet" draggable="true" aria-label="调整字母来捉迷藏顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="alphabet-art" aria-hidden="true"><span>A</span><span>b</span><span>c</span></div>
+          <div class="alphabet-copy"><span class="eyebrow">A SMALL GAME, A BIG SMILE</span><h2 id="alphabet-title">字母，来捉迷藏！</h2><p>26 个字母大小写配对，找找它的好朋友。</p><span id="alphabet-progress">已配对 0 / 26</span></div>
+          <button class="button button-white" data-start="alphabet">玩一小局<svg class="icon"><use href="#i-arrow"/></svg></button>
+        </section>
+        <section class="daily-word learning-module" id="daily-word" data-module="daily-word" aria-labelledby="word-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="daily-word" draggable="true" aria-label="调整每日一个新朋友顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="daily-word-content">
+            <div class="word-heading"><h2 id="word-title">每日一个新朋友</h2><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div>
+            <div class="daily-word-meta"><span class="word-eyebrow">WORD OF THE DAY</span><span id="daily-word-topic"></span><time id="daily-word-date"></time></div>
+            <div class="daily-word-entry">
+              <div class="word-illustration" aria-hidden="true"><span class="word-orbit"></span><svg class="word-book icon"><use href="#i-book"/></svg><svg class="mini-spark icon"><use href="#i-spark"/></svg></div>
+              <div class="word-definition"><h3 id="daily-word-text" lang="en"></h3><div class="word-phonetic"><span id="daily-word-ipa" lang="en"></span><span id="daily-word-meaning"></span></div></div>
             </div>
-            <div class="empty-state" id="search-empty" hidden><svg class="icon"><use href="#i-search"/></svg><h3>还没发现这个主题</h3><p>试试“颜色”、animals 或“数字”。</p><button class="button button-light" id="clear-search">查看所有主题</button></div>
-            <span class="sr-only" id="search-status" role="status"></span>
-          </section>
-          <section class="alphabet-panel" id="alphabet" aria-labelledby="alphabet-title"><div class="alphabet-art" aria-hidden="true"><span>A</span><span>b</span><span>c</span></div><div class="alphabet-copy"><span class="eyebrow">A SMALL GAME, A BIG SMILE</span><h2 id="alphabet-title">字母，来捉迷藏！</h2><p>找一找，哪个小写字母是它的好朋友？</p></div><button class="button button-white" data-start="alphabet">玩一小局<svg class="icon"><use href="#i-arrow"/></svg></button></section>
-        </div>
-        <div class="discovery-column">
-          <section class="daily-word" aria-labelledby="word-title"><div class="word-heading"><h2 id="word-title">每日一个新朋友</h2><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><span class="word-eyebrow">WORD OF THE DAY</span><div class="word-illustration" aria-hidden="true"><span class="word-orbit"></span><svg class="apple"><use href="#i-apple"/></svg><svg class="mini-spark icon"><use href="#i-spark"/></svg><span class="word-dot"></span></div><h3 lang="en">apple</h3><div class="word-phonetic"><span lang="en">/ˈæp.əl/</span><span>苹果</span></div><button class="listen-button" id="listen-word"><svg class="icon"><use href="#i-sound"/></svg>听听怎么读</button><p class="word-example"><span lang="en">An apple a day!</span><span>每天一个苹果！</span></p><div class="pronunciation-hint" id="pronunciation-hint" role="status" hidden></div><button class="remember-button" id="remember-word">我记住啦<svg class="icon"><use href="#i-star"/></svg><span>+1</span></button></section>
-          <section class="rewards-panel" id="rewards" aria-labelledby="rewards-title"><div class="section-heading"><h2 id="rewards-title">努力会发光</h2><svg class="icon reward-heading-star" aria-hidden="true"><use href="#i-spark"/></svg></div><p class="reward-subtitle">每一次尝试，都离成长更近一点。</p><div class="star-total"><div class="big-star"><svg class="icon"><use href="#i-star"/></svg></div><div><strong data-stars>0</strong><span>我的小星星</span></div></div><div class="reward-progress-label"><span id="reward-goal-label">下一站：闪亮探索家</span><strong id="reward-goal">0 / 10</strong></div><div class="reward-track" role="progressbar" aria-label="闪亮探索家星星奖励" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="reward-progress"><span id="reward-fill"></span></div><div class="badges"><div class="badge" data-badge="1"><span><svg class="icon"><use href="#i-flag"/></svg></span><strong>第一步</strong><small>1 颗星</small></div><div class="badge" data-badge="5"><span><svg class="icon"><use href="#i-spark"/></svg></span><strong>小小发现家</strong><small>5 颗星</small></div><div class="badge" data-badge="10"><span><svg class="icon"><use href="#i-trophy"/></svg></span><strong>闪亮探索家</strong><small>10 颗星</small></div></div><p class="reward-note" id="reward-note">你的第一颗星星，正等着你！</p></section>
-          <div class="privacy-note"><svg class="icon"><use href="#i-shield"/></svg><p>安心探索，自在成长<span>不收集个人信息 · 进度仅存本机</span></p></div>
-        </div>
+            <p class="daily-word-note">动物、颜色、水果、数字 · 四主题 70 个词条，每日轮换。</p>
+          </div>
+          <div class="daily-word-practice">
+            <span class="word-practice-label">听一听，一起说一句</span>
+            <p class="word-example"><span id="daily-word-example" lang="en"></span><span id="daily-word-translation"></span></p>
+            <div class="daily-word-actions"><button class="listen-button" id="listen-word"><svg class="icon"><use href="#i-sound"/></svg>听听怎么读</button><button class="remember-button" id="remember-word">我记住啦<svg class="icon"><use href="#i-star"/></svg><span>+1</span></button></div>
+            <div class="pronunciation-hint" id="pronunciation-hint" role="status" hidden></div>
+          </div>
+        </section>
+        <section class="life-section learning-module" id="life" data-module="life" aria-labelledby="life-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="life" draggable="true" aria-label="调整生活300词顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="life-banner">
+            <div><span class="eyebrow">LITTLE WORDS, EVERYDAY MOMENTS</span><h2 id="life-title">和你一起，<br>把英语说进生活。</h2><p>300 个常用词，12 个生活场景。拿起身边的东西，听一听，再一起说一句。</p><button class="button button-dark" id="start-five">一起学 5 个词<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div class="life-banner-note"><span class="life-note-icon"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span><strong>给小小探险家的家长</strong><p>每次几分钟，孩子愿意就跟着说。不用背拼写，也不必急着记音标。</p><span id="life-progress-label">已一起练习 0 / 300 词</span><progress id="life-progress" value="0" max="300" aria-label="生活单词练习进度"></progress></div>
+          </div>
+          <div class="life-library">
+            <div class="section-heading"><div><h3>今天，从哪里开始？</h3><p>选一个场景，或找找孩子刚刚问到的词。</p></div><span class="course-total">12 个主题</span></div>
+            <div id="life-topics" class="topic-list" role="group" aria-label="生活单词主题"></div>
+            <div class="life-filters"><label class="word-search-label" for="life-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input id="life-search" type="search" placeholder="搜单词、中文或场景，例如 apple / 苹果" maxlength="80" autocomplete="off"><span class="sr-only">搜索生活词库</span></label><label class="learn-filter-label" for="life-filter">练习状态<select id="life-filter"><option value="all">全部单词</option><option value="new">还没练过</option><option value="learned">一起练过</option></select></label></div>
+            <div class="word-results-heading"><p id="life-results" role="status"></p><button class="text-button" id="life-clear">重置筛选</button></div>
+            <div class="life-word-grid" id="life-word-grid"></div>
+            <div class="word-empty" id="life-empty" hidden><h3>这里暂时没有单词</h3><p>试试其他主题，或点“重置筛选”查看全部 300 词。</p></div>
+            <nav class="word-pagination" aria-label="生活单词分页"><button class="button button-light" id="life-prev">上一页</button><span id="life-page"></span><button class="button button-light" id="life-next">下一页</button></nav>
+            <details class="speech-settings"><summary>朗读设置与学习说明</summary><div class="speech-controls"><label for="voice-select">本机英语语音<select id="voice-select"><option value="">正在读取本机语音…</option></select></label><label class="slow-label"><input type="checkbox" id="slow-speech" checked>慢一点读</label><button class="text-button" id="stop-speech">停止朗读</button></div><p>音标采用英式词典标法，实际朗读口音以所选系统语音为准。只使用本机英语语音，不上传内容；若没有可用语音，请在系统中安装英语语音包。这里不录音，也不进行发音评分。</p><p>这些是独立编写的生活词条，不是译林教材词表。“一起练过”记录亲子练习，不代表已掌握；每词首次标记获得 1 颗星。</p><p id="speech-status" role="status"></p></details>
+          </div>
+        </section>
+        <section class="phonetics-section learning-module" id="phonetics" data-module="phonetics" aria-labelledby="phonetics-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="phonetics" draggable="true" aria-label="调整音标课堂顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="section-heading"><div><span class="eyebrow">LISTEN, NOTICE, TRY</span><h2 id="phonetics-title">音标课堂 · 把声音听清楚</h2><p>44 个常见英式音素：口型提示、例词对比和小练习。</p></div><span class="course-total" id="phonetics-progress">已练习 0 / 44</span></div>
+          <p class="phonetics-parent-note">给家长与稍大一些的孩子：三岁先听、模仿和交流即可，不要求记住这些符号。点卡片听例词，符号本身不交给机器朗读。</p>
+          <div class="phoneme-filters" role="group" aria-label="音标分类"><button class="topic-chip active" data-phoneme-group="short" aria-pressed="true">短元音 · 7</button><button class="topic-chip" data-phoneme-group="long" aria-pressed="false">长元音 · 5</button><button class="topic-chip" data-phoneme-group="diphthong" aria-pressed="false">双元音 · 8</button><button class="topic-chip" data-phoneme-group="consonant" aria-pressed="false">辅音 · 24</button></div>
+          <div class="phoneme-grid" id="phoneme-grid"></div>
+          <p class="phonetics-convention">采用传统英式词典的 44 音素教学分法（/r/ 为词典常用简记）；不同口音与词典标法会有差异，例如部分现代英音把 /ʊə/ 读作 /ɔː/。例词朗读不等同于单独音素录音。</p>
+        </section>
+        <section class="adventure learning-module" id="adventure" data-module="adventure" aria-labelledby="adventure-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="adventure" draggable="true" aria-label="调整每日冒险顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="adventure-copy"><span class="adventure-label"><svg class="icon"><use href="#i-flag"/></svg>每日冒险 <span>DAILY ADVENTURE</span></span><h2 id="adventure-title">下一站，<br>彩虹的世界！</h2><p>和 Lumi 一起，收集藏在颜色里的小惊喜。</p><button class="button button-dark" data-start="colors">开始冒险<svg class="icon"><use href="#i-arrow"/></svg></button><span class="adventure-meta">10 种颜色 <span>·</span> 可随时暂停 <span>·</span> 最多 10 颗星星</span></div>
+          <div class="adventure-art"><img src="assets/adventure.png" alt="演示角色 Lumi：戴着护目镜的奶油色小兔，驾驶黄色小飞机在云间探索" width="1536" height="1024" loading="lazy"><span class="art-caption">LET YOUR CURIOSITY FLY</span></div>
+        </section>
+        <section class="rewards-panel learning-module" id="rewards" data-module="rewards" aria-labelledby="rewards-title" tabindex="-1">
+          <div class="module-toolbar"><button type="button" class="module-handle" data-module-handle="rewards" draggable="true" aria-label="调整我的星星顺序" aria-describedby="module-order-help" title="拖动调整顺序，或聚焦后按上下方向键"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></button></div>
+          <div class="section-heading"><h2 id="rewards-title">努力会发光</h2><svg class="icon reward-heading-star" aria-hidden="true"><use href="#i-spark"/></svg></div><p class="reward-subtitle">每一次尝试，都离成长更近一点。</p><div class="star-total"><div class="big-star"><svg class="icon"><use href="#i-star"/></svg></div><div><strong data-stars>0</strong><span>我的小星星</span></div></div><div class="reward-progress-label"><span id="reward-goal-label">下一站：闪亮探索家</span><strong id="reward-goal">0 / 10</strong></div><div class="reward-track" role="progressbar" aria-label="闪亮探索家星星奖励" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="reward-progress"><span id="reward-fill"></span></div><div class="badges"><div class="badge" data-badge="1"><span><svg class="icon"><use href="#i-flag"/></svg></span><strong>第一步</strong><small>1 颗星</small></div><div class="badge" data-badge="5"><span><svg class="icon"><use href="#i-spark"/></svg></span><strong>小小发现家</strong><small>5 颗星</small></div><div class="badge" data-badge="10"><span><svg class="icon"><use href="#i-trophy"/></svg></span><strong>闪亮探索家</strong><small>10 颗星</small></div></div><p class="reward-note" id="reward-note">你的第一颗星星，正等着你！</p>
+        </section>
       </div>
+      <div class="privacy-note"><svg class="icon"><use href="#i-shield"/></svg><p>安心探索，自在成长<span>不收集个人信息 · 进度仅存本机</span></p></div>
       <footer><span class="footer-brand">lumi.</span><span>让好奇心，成为最好的老师。</span><span class="footer-demo">演示品牌与角色 · 本地学习体验</span></footer>
     </main>
   </div>
+  <dialog class="study-dialog" id="word-dialog" aria-labelledby="study-word-title"><button class="dialog-close" id="word-close" aria-label="关闭单词学习"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><div id="word-content"></div></dialog>
+  <dialog class="study-dialog phoneme-dialog" id="phoneme-dialog" aria-labelledby="study-sound-title"><button class="dialog-close" id="phoneme-close" aria-label="关闭音标学习"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><div id="phoneme-content"></div></dialog>
   <dialog class="learning-dialog" id="learning-dialog" aria-labelledby="quiz-title"><button class="dialog-close" id="quiz-close" aria-label="关闭练习"><svg class="icon"><use href="#i-close"/></svg></button><div id="quiz-content"></div></dialog>
-  <dialog class="reset-dialog" id="reset-dialog" aria-labelledby="reset-title"><span class="reset-icon"><svg class="icon"><use href="#i-reset"/></svg></span><h2 id="reset-title">重新开始一段冒险？</h2><p>这会清除当前浏览器中的星星、课程进度和连续学习记录，无法撤销。不影响其他设备。</p><div class="reset-actions"><button class="button button-light" id="reset-cancel">保留我的进度</button><button class="button button-dark" id="reset-confirm">确认重置</button></div></dialog>
+  <dialog class="reset-dialog" id="reset-dialog" aria-labelledby="reset-title"><span class="reset-icon"><svg class="icon"><use href="#i-reset"/></svg></span><h2 id="reset-title">重新开始一段冒险？</h2><p>这会清除当前浏览器中的星星、课程进度、生活单词与音标练习记录，以及连续学习记录，并恢复默认模块顺序，无法撤销。不影响其他设备。</p><div class="reset-actions"><button class="button button-light" id="reset-cancel">保留我的进度</button><button class="button button-dark" id="reset-confirm">确认重置</button></div></dialog>
   <div class="toast" id="toast" role="status" hidden></div>
 </body>
 </html>
